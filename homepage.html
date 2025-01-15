@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        .intro {
+            background: url('bgHp.jpg') no-repeat center center/cover;
+            text-align: center;
+            color: white;
+            padding: 100px 20px;
+        }
+
+        .intro h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            margin-top: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .rooms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .room {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .room:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .room img {
+            width: 100%;
+            height: auto;
+        }
+
+        .details {
+            padding: 15px;
+        }
+
+        .details h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .details p {
+            font-size: 1rem;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .details button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .details button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        .room-details {
+            display: none;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>BEST HOTEL</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Log Out</a>
+        <a href="M3-T2.html">Tambah Data Kamar & Fasilitas</a>
+        <a href="M6-T1.html">Pemesanan</a>
+    </nav>
+
+    <section class="intro">
+        <h2>ZYY HOTEL</h2>
+        <p>Tempat ideal untuk liburan Anda, dengan kenyamanan dan fasilitas terbaik.</p>
+    </section>
+
+    <main>
+        <section class="rooms">
+            <div class="room">
+                <img src="room1.png" alt="Luxury Family Deluxe">
+                <div class="details">
+                    <h2>Luxury Family Deluxe</h2>
+                    <p>Harga IDR : 700.000</p>
+                    <button onclick="showRoomDetails('luxuryFamilyDeluxe')">Pesan Kamar</button>
+                    <div id="luxuryFamilyDeluxe" class="room-details">
+                        <p>Fasilitas: Kamar keluarga besar, Ruang tamu, Kamar mandi luas, Akses kolam renang, Wi-Fi, dan layanan kamar 24 jam.</p>
+                        <a href="M6-T1.html" class="details button">Form Pemesanan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room">
+                <img src="room2.jpg" alt="Luxury Super Delux">
+                <div class="details">
+                    <h2>Luxury Super Delux</h2>
+                    <p>Harga IDR : 500.000</p>
+                    <button onclick="showRoomDetails('luxurySuperDelux')">Pesan Kamar</button>
+                    <div id="luxurySuperDelux" class="room-details">
+                        <p>Fasilitas: Kamar single super premium, Kolam renang pribadi, Jacuzzi, Akses internet dan Layanan kamar 24 jam.</p>
+                        <a href="M6-T1.html" class="details button">Form Pemesanan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room">
+                <img src="room3.jpg" alt="Single Super Delux">
+                <div class="details">
+                    <h2>Single Super Delux</h2>
+                    <p>Harga IDR : 300.000</p>
+                    <button onclick="showRoomDetails('singleSuperDelux')">Pesan Kamar</button>
+                    <div id="singleSuperDelux" class="room-details">
+                        <p>Fasilitas: Kamar single premium, Akses kolam renang dan Akses internet.</p>
+                        <a href="M6-T1.html" class="details button">Form Pemesanan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room">
+                <img src="room4.jpg" alt="Standar Super">
+                <div class="details">
+                    <h2>Standar Super</h2>
+                    <p>Harga IDR : 200.000</p>
+                    <button onclick="showRoomDetails('standarSuper')">Pesan Kamar</button>
+                    <div id="standarSuper" class="room-details">
+                        <p>Fasilitas: Kamar standar dengan tempat tidur king dan Akses Wi-Fi gratis.</p>
+                        <a href="M6-T1.html" class="details button">Form Pemesanan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function showRoomDetails(roomId) {
+                const roomDetails = document.getElementById(roomId);
+                roomDetails.style.display = roomDetails.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Zyy Hotel. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

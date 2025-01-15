@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Zyy Hotel</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #ececec, #ffffff);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus, button:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #f8f9fa;
+            color: #0056b3;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h2>Dashboard Admin - Zyy Hotel</h2>
+    </div>
+    <div class="container">
+        <h3>Pengelolaan Hotel</h3>
+        <form>
+            <div class="form-group">
+                <label for="nomor-kamar">Nomor Kamar:</label>
+                <input type="text" id="nomor-kamar" placeholder="Masukkan Nomor Kamar">
+            </div>
+            <div class="form-group">
+                <label for="jenis-kamar">Jenis Kamar:</label>
+                <select id="jenis-kamar">
+                    <option value="Luxury Super Delux">Luxury Super Delux</option>
+                    <option value="Luxury Family Delux">Luxury Family Delux</option>
+                    <option value="Single Super Delux">Single Super Delux</option>
+                    <option value="Standar Super">Standar Super</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Fasilitas yang Dimiliki Hotel:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" value="Kolam Renang"> Kolam Renang</label>
+                    <label><input type="checkbox" value="Jacuzzi"> Jacuzzi</label>
+                    <label><input type="checkbox" value="Akses Internet"> Akses Internet</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="harga-kamar">Harga Kamar (per malam):</label>
+                <input type="text" id="harga-kamar" placeholder="Masukkan Harga">
+            </div>
+            <button type="button">Simpan Kamar</button>
+        </form>
+        <a href="index.html" class="back-button">Kembali ke Login</a>
+
+        <h3>Data Pemesanan Kamar</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Konsumen</th>
+                    <th>Nomor Kamar</th>
+                    <th>Jenis Kamar</th>
+                    <th>Fasilitas</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Azka</td>
+                    <td>123</td>
+                    <td>Single Super Delux</td>
+                    <td>Kolam Renang, Akses Internet</td>
+                    <td>Rp 299.000</td>
+                </tr>
+                <tr>
+                    <td>Setiawan</td>
+                    <td>124</td>
+                    <td>Luxury Family Delux</td>
+                    <td>Akses Internet</td>
+                    <td>Rp 599.000</td>
+                </tr>
+                <tr>
+                    <td>Defi</td>
+                    <td>125</td>
+                    <td>Luxury Super Delux</td>
+                    <td>Kolam Renang, Jacuzzi</td>
+                    <td>Rp 499.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

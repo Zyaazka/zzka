@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data Kamar dan Fasilitas</title>
+    <link rel="stylesheet" href="stylet2.css">
+</head>
+<body>
+
+<!-- Form Tambah Data Kamar -->
+<div class="form-container">
+    <h2>Form Tambah Data Kamar</h2>
+    <form id="formTambahKamar">
+        <table>
+            <tr>
+                <td><label for="id_kamar">ID Kamar:</label></td>
+                <td><input type="number" id="id_kamar" name="id_kamar"></td>
+            </tr>
+            <tr>
+                <td><label for="jenis_kamar">Jenis Kamar:</label></td>
+                <td>
+                    <select id="jenis_kamar" name="jenis_kamar" onchange="updatePreview()">
+                        <option value="">--Pilih--</option>
+                        <option value="room1">Kamar 1</option>
+                        <option value="room2">Kamar 2</option>
+                        <option value="room3">Kamar 3</option>
+                        <option value="room4">Kamar 4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Gambar Ruangan:</label></td>
+                <td>
+                    <img id="previewImage" class="preview-image" src="" alt="Preview Gambar Ruangan">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="harga">Harga:</label></td>
+                <td><input type="number" id="harga" name="harga"></td>
+            </tr>
+            <tr>
+                <td><label for="fasilitas">Fasilitas:</label></td>
+                <td><input type="text" id="fasilitas" name="fasilitas" placeholder="Contoh: AC, WiFi, TV"></td>
+            </tr>
+        </table>
+
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="reset" class="btn btn-secondary">Batal</button>
+        </div>
+    </form>
+</div>
+
+<!-- Form Tambah Data Fasilitas -->
+<div class="form-container">
+    <h2>Form Tambah Data Fasilitas</h2>
+    <form id="formTambahFasilitas">
+        <table>
+            <tr>
+                <td><label for="id_fasilitas">ID Fasilitas:</label></td>
+                <td><input type="number" id="id_fasilitas" name="id_fasilitas"></td>
+            </tr>
+            <tr>
+                <td><label for="nama_fasilitas">Nama Fasilitas:</label></td>
+                <td><input type="text" id="nama_fasilitas" name="nama_fasilitas"></td>
+            </tr>
+            <tr>
+                <td><label for="harga_weekend">Harga Weekend:</label></td>
+                <td><input type="number" id="harga_weekend" name="harga_weekend"></td>
+            </tr>
+            <tr>
+                <td><label for="harga_weekday">Harga Weekday:</label></td>
+                <td><input type="number" id="harga_weekday" name="harga_weekday"></td>
+            </tr>
+            <tr>
+                <td><label for="kuota">Kuota:</label></td>
+                <td><input type="number" id="kuota" name="kuota"></td>
+            </tr>
+            <tr>
+                <td><label for="jam_buka">Jam Buka:</label></td>
+                <td><input type="time" id="jam_buka" name="jam_buka"></td>
+            </tr>
+            <tr>
+                <td><label for="jam_tutup">Jam Tutup:</label></td>
+                <td><input type="time" id="jam_tutup" name="jam_tutup"></td>
+            </tr>
+        </table>
+
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="reset" class="btn btn-secondary">Batal</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function updatePreview() {
+        const jenisKamar = document.getElementById("jenis_kamar").value;
+        const previewImage = document.getElementById("previewImage");
+
+        if (jenisKamar === "room1") {
+            previewImage.src = "room1.png";
+        } else if (jenisKamar === "room2") {
+            previewImage.src = "room2.jpg";
+        } else if (jenisKamar === "room3") {
+            previewImage.src = "room3.jpg";
+        } else if (jenisKamar === "room4") {
+            previewImage.src = "room4.jpg";
+        } else {
+            previewImage.src = "";
+        }
+    }
+</script>
+
+</body>
+</html>
